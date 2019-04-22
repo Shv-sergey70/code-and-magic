@@ -1,3 +1,5 @@
+'use strict';
+
 var setup = document.querySelector('.setup');
 var wizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
 var similarWizardsBlock = document.querySelector('.setup-similar ');
@@ -40,8 +42,10 @@ function generateWizards(numberOfWizards) {
 
 function renderWizard(wizardData) {
   var wizard = wizardTemplate.cloneNode(true);
+
   wizard.querySelector('.setup-similar-label').textContent = wizardData['name'];
   wizard.querySelector('.wizard-coat').style.fill = wizardData['coatColor'];
   wizard.querySelector('.wizard-eyes').style.fill = wizardData['eyesColor'];
+
   return wizard;
 }
