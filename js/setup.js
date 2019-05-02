@@ -1,9 +1,5 @@
 'use strict';
 
-var KEY_ENTER = 'Enter';
-var KEY_ESC = 'Escape';
-
-var setup = document.querySelector('.setup');
 var wizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
 var similarWizardsBlock = document.querySelector('.setup-similar ');
 var similarWizardsList = similarWizardsBlock.querySelector('.setup-similar-list');
@@ -16,11 +12,6 @@ var WIZARDS_FIREBALL_COLOR = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e8
 
 var wizardsFragment = document.createDocumentFragment();
 var wizards = generateWizards(4);
-
-var closeButton = document.querySelector('.setup-close');
-var openButton = document.querySelector('.setup-open');
-var userIcon = document.querySelector('.setup-open-icon');
-var setupUserNameInput = document.querySelector('.setup-user-name');
 
 var playerSetupBlock = document.querySelector('.setup-player');
 var userWizardCoat = playerSetupBlock.querySelector('.setup-wizard .wizard-coat');
@@ -49,39 +40,6 @@ userWizardFireball.addEventListener('click', function () {
 
   userWizardFireball.style.backgroundColor = fireballColor;
   userWizardFireballInput.value = fireballColor;
-});
-
-var onSetupPopupEscKeydown = function (evt) {
-  if (evt.key === KEY_ESC && evt.target !== setupUserNameInput) {
-    closeSetupPopup();
-  }
-  if (evt.key === KEY_ENTER && evt.target === closeButton) {
-    closeSetupPopup();
-  }
-};
-var openSetupPopup = function () {
-  setup.classList.remove('hidden');
-
-  document.addEventListener('keydown', onSetupPopupEscKeydown);
-};
-var closeSetupPopup = function () {
-  setup.classList.add('hidden');
-
-  document.removeEventListener('keydown', onSetupPopupEscKeydown);
-};
-
-closeButton.addEventListener('click', function () {
-  closeSetupPopup();
-});
-
-openButton.addEventListener('click', function () {
-  openSetupPopup();
-});
-
-document.addEventListener('keydown', function (evt) {
-  if (evt.target === userIcon && evt.key === KEY_ENTER) {
-    openSetupPopup();
-  }
 });
 
 for (var j = 0; j < wizards.length; j++) {
