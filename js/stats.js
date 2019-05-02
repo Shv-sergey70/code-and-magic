@@ -34,7 +34,7 @@ window.renderStatistics = function (ctx, names, times) {
   ctx.fillText('Ура вы победили!', CLOUD_X + TEXT_PADDING, CLOUD_Y + TEXT_PADDING);
   ctx.fillText('Список результатов:', CLOUD_X + TEXT_PADDING, CLOUD_Y + TEXT_PADDING * 2);
 
-  var maxTimeResult = getMaxArrayValue(times);
+  var maxTimeResult = window.util.getMaxArrayValue(times);
   var columnHeight = 0;
   ctx.textBaseline = 'bottom';
 
@@ -55,16 +55,3 @@ window.renderStatistics = function (ctx, names, times) {
     ctx.fillText(Math.floor(times[i]), COLUMNS_X + COLUMNS_GAP * i, CLOUD_HEIGHT - columnHeight - TEXT_PADDING);
   }
 };
-
-function getMaxArrayValue(array) {
-  var result = 0;
-
-  for (var i = 0; i < array.length; i++) {
-
-    if (array[i] > result) {
-      result = array[i];
-    }
-  }
-
-  return result;
-}
