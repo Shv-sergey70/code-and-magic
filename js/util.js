@@ -13,6 +13,14 @@
       }
 
       return result;
+    },
+    showUserError: function (errorMessage) {
+      var errorBlock = document.querySelector('.errors');
+      errorBlock.textContent = errorMessage;
+      errorBlock.classList.remove('hidden');
+    },
+    showDevError: function (errorMessage) {
+      console.error('Возникла ошибка: ' + errorMessage);
     }
   };
 })();

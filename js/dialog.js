@@ -9,7 +9,7 @@
   var userIcon = document.querySelector('.setup-open-icon');
   var closeDialogButton = document.querySelector('.setup-close');
   var openDialogButton = document.querySelector('.setup-open');
-  var inputFileInDialog = setupBlock.querySelector('[name="avatar"]')
+  var inputFileInDialog = setupBlock.querySelector('[name="avatar"]');
 
   var onSetupPopupEscKeydown = function (evt) {
     if (evt.key === KEY_ESC && evt.target !== setupUserNameInput) {
@@ -24,7 +24,7 @@
 
     document.addEventListener('keydown', onSetupPopupEscKeydown);
   };
-  var closeSetupPopup = function () {
+  window.closeSetupPopup = function () {
     setupBlock.classList.add('hidden');
 
     setupBlock.style.left = '';
