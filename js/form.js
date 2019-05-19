@@ -6,6 +6,6 @@
     evt.preventDefault();
     window.backend.save(new FormData(wizardForm), function () {
       window.closeSetupPopup();
-    }, window.util.showDevError);
+    }, window.util.showUserError);
   });
 })();

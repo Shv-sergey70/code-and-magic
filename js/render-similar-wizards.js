@@ -24,5 +24,5 @@
     }
     similarWizardsList.appendChild(wizardsFragment);
     similarWizardsBlock.classList.remove('hidden');
-  }, window.util.showUserError);
+  }, window.util.showDevError);
 })();
